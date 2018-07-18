@@ -1,4 +1,3 @@
-require 'pry'
 class Board
   attr_reader :size, :spaces, :mark, :solutions
   def initialize(opts = {})
