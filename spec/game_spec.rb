@@ -7,5 +7,4 @@ describe Game do
     game = Game.new(board: board)
     expect(game.over?).to eq true
   end
-
 end

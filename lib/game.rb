@@ -7,6 +7,7 @@ class Game
   end
 
   def over?
-    @board.winner?(player_1) || @board.winner?(player_2)
+    @board.winner?(player_1)
+    @board.winner?(player_2)
   end
 end
