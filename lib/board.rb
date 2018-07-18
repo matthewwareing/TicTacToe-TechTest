@@ -1,7 +1,7 @@
 class Board
   attr_reader :size, :spaces, :mark, :solutions
   def initialize(opts = {})
-    @size = opts[:size]
+    @size = opts.fetch(:size, 3)
     @spaces = [nil] * size**2
   end
 
