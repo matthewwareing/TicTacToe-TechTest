@@ -1,3 +1,5 @@
+<a href="https://codeclimate.com/github/mdwareing/TicTacToe-TechTest/maintainability"><img src="https://api.codeclimate.com/v1/badges/0ca7502f51038611b37c/maintainability" /></a>
+
 The rules of tic-tac-toe are as follows:
 
 There are two players in the game (X and O)
