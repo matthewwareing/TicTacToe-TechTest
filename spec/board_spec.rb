@@ -27,6 +27,12 @@ describe Board do
   it 'should raise error when mark already marked index' do
     board = Board.new(size: 3)
     board.mark(4, :O)
-    expect{board.mark(4, :X)}.to raise_exception("You cannot mark an already marked space")
+    expect { board.mark(4, :X) }.to raise_exception("You cannot mark an already marked space")
   end
+
+  it 'should if any winning combination has been found' do
+    board = Board.new(size: 3)
+    expect(board.winner?(:x)).to eq false
+  end
+
 end
