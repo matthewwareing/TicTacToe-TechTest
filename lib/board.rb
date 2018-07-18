@@ -1,3 +1,4 @@
+require 'pry'
 class Board
   attr_reader :size, :spaces, :mark, :solutions
   def initialize(opts = {})
@@ -15,7 +16,7 @@ class Board
   end
 
   def winner?(player)
-    winning_conditions.any? {|solution| (solution - player_marks(player)).empty? }
+    winning_conditions.any? { |solution| (solution - player_marks(player)).empty? }
   end
 
   private

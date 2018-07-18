@@ -40,7 +40,7 @@ describe Board do
     board.mark(0, :x)
     board.mark(4, :x)
     board.mark(6, :x)
-    expect(board.player_marks(:x)).to eq [0,4,6]
+    expect(board.player_marks(:x)).to eq [0, 4, 6]
   end
 
 end
