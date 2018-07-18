@@ -1,3 +1,4 @@
+require 'pry'
 class Board
   attr_reader :size, :spaces, :mark, :solutions
   def initialize(opts = {})
@@ -7,13 +8,16 @@ class Board
   end
 
   def mark(index, player)
-    raise ArgumentError.new("You cannot mark an already marked space") if @spaces[index] != nil
-    @spaces[index] = player
+    raise ArgumentError.new("You cannot mark an already marked space") if spaces[index] != nil
+    spaces[index] = player
+  end
+
+  def player_marks(player)
+    spaces.each_index.select { |square| spaces[square] == player }
   end
 
   def winner?(player)
-    player_marks = @spaces.select { |square| square == player }
-    @solutions.any? {|solution| (solution - player_marks).empty? }
+    solutions.any? {|solution| (solution - player_marks(player)).empty? }
   end
 
   private

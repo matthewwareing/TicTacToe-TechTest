@@ -1,5 +1,5 @@
 require 'board.rb'
-
+require 'pry'
 describe Board do
   it 'should return board size' do
     board = Board.new(size: 3)
@@ -33,6 +33,14 @@ describe Board do
   it 'should if any winning combination has been found' do
     board = Board.new(size: 3)
     expect(board.winner?(:x)).to eq false
+  end
+
+  it 'should be able to return the marks of one player' do
+    board = Board.new(size: 3)
+    board.mark(0, :x)
+    board.mark(4, :x)
+    board.mark(6, :x)
+    expect(board.player_marks(:x)).to eq [0,4,6]
   end
 
 end
