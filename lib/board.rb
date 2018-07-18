@@ -4,7 +4,6 @@ class Board
   def initialize(opts = {})
     @size = opts[:size]
     @spaces = [nil] * size**2
-    @solutions = winning_conditions
   end
 
   def mark(index, player)
@@ -17,7 +16,7 @@ class Board
   end
 
   def winner?(player)
-    solutions.any? {|solution| (solution - player_marks(player)).empty? }
+    winning_conditions.any? {|solution| (solution - player_marks(player)).empty? }
   end
 
   private
