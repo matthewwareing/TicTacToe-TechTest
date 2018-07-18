@@ -6,6 +6,7 @@ class Board
   end
 
   def mark(index, player)
+    raise ArgumentError.new("You cannot mark an already marked space") if @spaces[index] != nil
     @spaces[index] = player
   end
 
